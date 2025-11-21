@@ -1,0 +1,13 @@
+ int myNum;
+do{
+    Console.WriteLine("Enter the Number");
+    
+}
+while(!int.TryParse(Console.ReadLine(),out myNum)||myNum<=9);
+
+int total=0;
+
+foreach(char s in myNum.ToString())
+ total+=int.Parse(s.ToString());
+    
+Console.WriteLine(total);
