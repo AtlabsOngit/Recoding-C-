@@ -1,0 +1,27 @@
+string myString;
+     
+     do{
+     Console.Write("Enter your prefferd string: "); 
+     myString=Console.ReadLine();
+     }
+     while(string.IsNullOrWhiteSpace(myString));
+    
+     
+     
+     string revString(string toReverse){
+         
+         Stack<char> revStack=new Stack<char>();
+         foreach(char n in toReverse){
+             revStack.Push(n);
+         }
+         
+        string finalString="";
+        
+        while(revStack.Count>0){
+           finalString = string.Concat(finalString,revStack.Pop());
+        }
+        
+        return finalString;
+     }
+  
+  Console.WriteLine(revString(myString));
