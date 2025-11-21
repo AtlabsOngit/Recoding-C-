@@ -1,0 +1,15 @@
+ int myNum;
+     do{
+         Console.Write("Enter a number: ");
+     }while(!int.TryParse(Console.ReadLine(), out myNum) || myNum<0);
+     
+     int count=0;
+     bool checkPrime(int numCheck){
+         if(numCheck<2)return false;
+         for (int i=2; i<=Math.Sqrt(numCheck);i++){
+             if(numCheck%i==0)return false;
+         }
+     return true;
+     }
+     
+     Console.WriteLine(checkPrime(myNum));
