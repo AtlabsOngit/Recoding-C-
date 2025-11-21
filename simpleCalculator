@@ -1,0 +1,40 @@
+int myNum;
+    int receiveNumbers(string title) {
+        do{
+            Console.WriteLine($"Enter the {title} number");
+        }while(!int.TryParse(Console.ReadLine(), out myNum) || myNum<0);
+        
+    return myNum;
+    } 
+    
+    string receiveOperand(){
+        string oper;
+        do{
+            Console.WriteLine("Enter the operator (+,-,/,*)");
+            oper=Console.ReadLine();
+        }while(string.IsNullOrWhiteSpace(oper));
+        
+        return oper;
+    }
+    
+    void Operation(int num1,int num2, string operand){
+        int total=0;
+        switch (operand){
+            case "+": total=num1+num2;
+            break;
+            case "-": total=num1-num2;
+            break;
+            case "*": total=num1*num2;
+            break;
+            case "/": total=num1/num2;
+            break;
+        
+        }
+    Console.WriteLine($"{num1} {operand} {num2} is {total}");
+    }
+    
+    int firstNum=receiveNumbers("first");
+    string operand=receiveOperand();
+    int secondNum=receiveNumbers("second");
+    
+    Operation(firstNum, secondNum, operand);
